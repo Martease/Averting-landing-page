@@ -144,16 +144,18 @@ body {
 
 .legacy_page .circle_item {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
+  width: auto;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  padding: 8px;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  padding: 0;
+  border-radius: 0;
 }
 
 .legacy_page .circle_item i {
@@ -166,41 +168,36 @@ body {
   top: 60px;
   left: 50%;
   transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 
 .legacy_page .item2 {
   top: 25%;
   right: 60px;
   transform: translate(50%, -50%);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 
 .legacy_page .item3 {
   bottom: 25%;
   right: 60px;
   transform: translate(50%, 50%);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 
 .legacy_page .item4 {
   bottom: 60px;
   left: 50%;
   transform: translate(-50%, 50%);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 
 .legacy_page .item5 {
   top: 50%;
   left: 60px;
   transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 
 .legacy_page .testimonials_section {
   padding: 4rem 2rem;
   text-align: center;
-  background: #fff;
+  background: #ccad00;
 }
 
 .legacy_page .testimonials_section h2,
@@ -259,56 +256,22 @@ body {
   margin-bottom: 1rem;
 }
 
-.legacy_page .social_links a {
-  color: #fff;
-  font-size: 1.5rem;
-}
-
 .modern_bridge {
-  position: relative;
-  padding: 1.2rem 0 0.4rem;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.modern_bridge .bg_shape {
-  position: fixed;
-  width: 340px;
-  height: 340px;
-  z-index: -1;
-  border-radius: 34% 66% 45% 55% / 53% 49% 51% 47%;
-  pointer-events: none;
-}
-
-.modern_bridge .bg_shape_left {
-  top: -110px;
-  left: -70px;
-  background: linear-gradient(135deg, rgba(210, 165, 42, 0.35), rgba(124, 31, 51, 0.24));
-  animation: drift-left 16s ease-in-out infinite;
-}
-
-.modern_bridge .bg_shape_right {
-  right: -80px;
-  bottom: -120px;
-  background: linear-gradient(135deg, rgba(124, 31, 51, 0.26), rgba(240, 200, 90, 0.27));
-  animation: drift-right 18s ease-in-out infinite;
+  width: min(720px, 92vw);
+  margin: 2rem auto 3rem;
 }
 
 .top_bar {
-  width: min(1100px, 92vw);
-  margin: 1.2rem auto 0;
-  padding: 0.9rem 1rem;
-  border: 1px solid rgba(124, 31, 51, 0.18);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(124, 31, 51, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
 }
 
 .brand {
@@ -324,111 +287,30 @@ a {
   object-fit: contain;
 }
 
-.text_link {
-  color: var(--brand-maroon);
+.visit_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: var(--brand-maroon);
+  color: #fff;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.bridge_layout {
-  width: min(1100px, 92vw);
-  margin: 2rem auto 2.4rem;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.bridge_intro,
 .bridge_card {
+  padding: 1.45rem;
   border-radius: 22px;
   border: 1px solid var(--line);
   background: var(--surface);
   box-shadow: 0 24px 60px rgba(45, 26, 18, 0.08);
 }
 
-.bridge_intro {
-  padding: 2rem;
-}
-
-.kicker {
-  width: fit-content;
-  margin-bottom: 0.75rem;
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  background: rgba(210, 165, 42, 0.2);
-  color: var(--brand-maroon);
-}
-
-h1,
-h2,
-legend {
-  font-family: "Fraunces", serif;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-h1 {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  letter-spacing: -0.02em;
-  color: var(--brand-dark);
-}
-
-.lede {
-  margin-top: 1.1rem;
-  font-size: 1.03rem;
-  line-height: 1.7;
-  max-width: 62ch;
-}
-
-.feature_list {
-  margin-top: 1.6rem;
-  list-style: none;
-  display: grid;
-  gap: 0.95rem;
-}
-
-.feature_list li {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 0.75rem;
-  padding: 0.85rem;
-  border: 1px solid rgba(124, 31, 51, 0.15);
-  border-radius: 14px;
-  background: #fffdf9;
-}
-
-.feature_list i {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: rgba(210, 165, 42, 0.18);
-  color: var(--brand-maroon);
-  font-size: 1.2rem;
-}
-
-.feature_list h2 {
-  font-size: 1.08rem;
-  color: var(--brand-dark);
-}
-
-.feature_list p {
-  margin-top: 0.25rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.bridge_card {
-  padding: 1.45rem;
-}
-
 .bridge_card h2 {
+  font-family: "Fraunces", serif;
   font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.1;
   color: var(--brand-dark);
 }
 
@@ -437,6 +319,120 @@ h1 {
   font-size: 0.98rem;
 }
 
+.bridge_card form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.bridge_card label,
+.bridge_card legend {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.bridge_card input,
+.bridge_card select,
+.bridge_card textarea,
+.bridge_card button {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.bridge_card input,
+.bridge_card select,
+.bridge_card textarea {
+  padding: 0.68rem 0.72rem;
+  border: 1px solid #c7b494;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.bridge_card fieldset {
+  margin-top: 0.35rem;
+  padding: 0.7rem;
+  border: 1px solid #d6c6ad;
+  border-radius: 12px;
+}
+
+.radio_row {
+  margin-top: 0.4rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.radio_row label {
+  font-weight: 500;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.consent {
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.bridge_card .primary_btn {
+  margin-top: 0.35rem;
+  border: 0;
+  border-radius: 11px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background: linear-gradient(120deg, var(--brand-maroon), #9f2a45);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.bridge_card .primary_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(124, 31, 51, 0.25);
+}
+
+.bridge_card .primary_btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.status_message {
+  min-height: 1.25rem;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.status_message.success {
+  color: var(--ok);
+}
+
+.status_message.error {
+  color: var(--error);
+}
+
+@media (max-width: 600px) {
+  .top_bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand span {
+    font-size: 0.95rem;
+  }
+}
+
+.legacy_page .social_links a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 form {
   display: grid;
   gap: 0.65rem;
@@ -525,61 +521,10 @@ fieldset {
   opacity: 0.8;
 }
 
-.status_message {
-  min-height: 1.25rem;
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-}
-
-.status_message.success {
-  color: var(--ok);
-}
-
-.status_message.error {
-  color: var(--error);
-}
-
 .mini_footer {
   text-align: center;
   padding: 0.2rem 1rem 1.3rem;
   color: #5a5144;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: rise-in 620ms ease forwards;
-}
-
-.reveal_delay {
-  animation-delay: 220ms;
-}
-
-@keyframes rise-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes drift-left {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(12px) rotate(4deg);
-  }
-}
-
-@keyframes drift-right {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-14px) rotate(-5deg);
-  }
 }
 
 @media (max-width: 960px) {
@@ -608,13 +553,6 @@ fieldset {
     max-width: 300px;
   }
 
-  .bridge_layout {
-    grid-template-columns: 1fr;
-  }
-
-  .top_bar {
-    margin-top: 1rem;
-  }
 }
 
 @media (max-width: 600px) {
@@ -627,23 +565,5 @@ fieldset {
   .legacy_page .nav_links {
     flex-wrap: wrap;
     gap: 0.8rem;
-  }
-
-  .top_bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .brand span {
-    font-size: 0.95rem;
-  }
-
-  .bridge_intro,
-  .bridge_card {
-    padding: 1.2rem;
-  }
-
-  .radio_row {
-    gap: 0.6rem;
   }
 }
