@@ -108,90 +108,166 @@ body {
   font-size: 1.1rem;
 }
 
-.legacy_page .services_circle {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: #767268;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.legacy_page .services_showcase {
+  padding: clamp(3rem, 7vw, 4.8rem) 1.5rem;
+  background:
+    radial-gradient(circle at 8% 15%, rgba(255, 215, 120, 0.35), transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(124, 31, 51, 0.22), transparent 45%),
+    linear-gradient(160deg, #685e54 0%, #595147 100%);
 }
 
-.legacy_page .circle_container {
-  position: relative;
-  width: 600px;
-  height: 600px;
+.legacy_page .services_shell {
+  width: min(1050px, 95vw);
   margin: 0 auto;
-  background: #767268;
+}
+
+.legacy_page .services_intro {
+  text-align: center;
+  color: #fff;
+  margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.legacy_page .services_eyebrow {
+  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffdb7d;
+  margin-bottom: 0.45rem;
+}
+
+.legacy_page .services_intro h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.65rem, 3.8vw, 2.7rem);
+  line-height: 1.12;
+  margin-bottom: 0.6rem;
+}
+
+.legacy_page .services_intro > p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #f3e8d6;
+}
+
+.legacy_page .services_grid {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "event core workshop"
+    "onboarding core learning"
+    ". resources .";
+}
+
+.legacy_page .service_card {
+  background: rgba(255, 250, 240, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 1.1rem;
+  box-shadow: 0 12px 24px rgba(18, 9, 5, 0.18);
+  backdrop-filter: blur(4px);
+}
+
+.legacy_page .service_card span {
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.legacy_page .circle_center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
-}
-
-.legacy_page .circle_center img {
-  width: 100%;
-  height: auto;
-}
-
-.legacy_page .circle_item {
-  position: absolute;
-  width: auto;
-  height: auto;
-  background: transparent;
-  box-shadow: none;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.legacy_page .service_card h3 {
+  font-size: 1.06rem;
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
+}
+
+.legacy_page .service_card p {
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.legacy_page .card_event {
+  grid-area: event;
+  transform: rotate(-2deg);
+}
+
+.legacy_page .card_workshop {
+  grid-area: workshop;
+  transform: rotate(2deg);
+}
+
+.legacy_page .card_onboarding {
+  grid-area: onboarding;
+  transform: rotate(-1.5deg);
+}
+
+.legacy_page .card_learning {
+  grid-area: learning;
+  transform: rotate(1.8deg);
+}
+
+.legacy_page .card_resources {
+  grid-area: resources;
+  transform: translateY(0.2rem);
+}
+
+.legacy_page .card_event span {
+  background: linear-gradient(135deg, #ca8e1b, #f0c85a);
+}
+
+.legacy_page .card_workshop span {
+  background: linear-gradient(135deg, #885219, #d28c32);
+}
+
+.legacy_page .card_onboarding span {
+  background: linear-gradient(135deg, #7c1f33, #b23757);
+}
+
+.legacy_page .card_learning span {
+  background: linear-gradient(135deg, #4a5f88, #708cc3);
+}
+
+.legacy_page .card_resources span {
+  background: linear-gradient(135deg, #2f5d46, #4f8c6c);
+}
+
+.legacy_page .services_core {
+  grid-area: core;
+  align-self: center;
+  justify-self: center;
+  width: min(280px, 100%);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  font-size: 0.95rem;
-  padding: 0;
-  border-radius: 0;
+  text-align: center;
+  padding: 1.3rem;
+  color: #fff;
+  background:
+    radial-gradient(circle at 30% 20%, #f3d784 0%, rgba(243, 215, 132, 0.1) 45%),
+    linear-gradient(145deg, #7c1f33 0%, #3b1f17 100%);
+  border: 2px solid rgba(255, 221, 148, 0.45);
+  box-shadow: 0 14px 38px rgba(30, 16, 10, 0.28);
 }
 
-.legacy_page .circle_item i {
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-  color: #ccad00;
+.legacy_page .services_core img {
+  width: clamp(96px, 10vw, 122px);
+  height: auto;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.25));
 }
 
-.legacy_page .item1 {
-  top: 60px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.legacy_page .item2 {
-  top: 25%;
-  right: 60px;
-  transform: translate(50%, -50%);
-}
-
-.legacy_page .item3 {
-  bottom: 25%;
-  right: 60px;
-  transform: translate(50%, 50%);
-}
-
-.legacy_page .item4 {
-  bottom: 60px;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.legacy_page .item5 {
-  top: 50%;
-  left: 60px;
-  transform: translate(-50%, -50%);
+.legacy_page .services_core p {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 .legacy_page .testimonials_section {
@@ -528,34 +604,44 @@ fieldset {
 }
 
 @media (max-width: 960px) {
-  .legacy_page .circle_container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+  .legacy_page .services_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "core core"
+      "event workshop"
+      "onboarding learning"
+      "resources resources";
   }
 
-  .legacy_page .circle_center,
-  .legacy_page .circle_item,
-  .legacy_page .item1,
-  .legacy_page .item2,
-  .legacy_page .item3,
-  .legacy_page .item4,
-  .legacy_page .item5 {
-    position: static;
+  .legacy_page .card_event,
+  .legacy_page .card_workshop,
+  .legacy_page .card_onboarding,
+  .legacy_page .card_learning,
+  .legacy_page .card_resources {
     transform: none;
   }
-
-  .legacy_page .circle_item {
-    width: 90%;
-    max-width: 300px;
-  }
-
 }
 
 @media (max-width: 600px) {
+  .legacy_page .services_showcase {
+    padding: 2.5rem 1rem;
+  }
+
+  .legacy_page .services_grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "core"
+      "event"
+      "workshop"
+      "onboarding"
+      "learning"
+      "resources";
+  }
+
+  .legacy_page .services_core {
+    width: min(240px, 84vw);
+  }
+
   .legacy_page .nav_header {
     flex-direction: column;
     align-items: flex-start;
